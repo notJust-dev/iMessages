@@ -6,6 +6,7 @@ export type User = {
   id: number;
   username: string;
   name: string;
+  streamToken: string;
 };
 
 type AuthContextType = {
@@ -67,6 +68,7 @@ export function AuthProvider(props) {
 
   const signIn = async (username: string) => {
     const newUser = await login(username);
+    console.log(newUser);
     setUser(newUser);
   };
 
