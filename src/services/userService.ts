@@ -19,3 +19,8 @@ export const login = async (username: string): Promise<User | null> => {
     return await res.json();
   }
 };
+
+export const getUsers = async (): Promise<User[]> => {
+  const res = await fetch(`${API_URL}/users`);
+  return res.json();
+};
